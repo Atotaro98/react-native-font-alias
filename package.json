@@ -1,0 +1,47 @@
+{
+  "name": "react-native-font-alias",
+  "version": "1.0.0",
+  "description": "Register font alias names on iOS so fontFamily works with filenames instead of PostScript names",
+  "main": "src/index",
+  "react-native": "src/index",
+  "license": "MIT",
+  "author": {
+    "name": "Alejo Totaro Barbieri",
+    "email": "alejocs1998@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Atotaro98/react-native-font-alias.git"
+  },
+  "homepage": "https://github.com/Atotaro98/react-native-font-alias#readme",
+  "bugs": {
+    "url": "https://github.com/Atotaro98/react-native-font-alias/issues"
+  },
+  "keywords": [
+    "react-native",
+    "font",
+    "expo-font",
+    "fontFamily",
+    "ios",
+    "postscript",
+    "font-alias",
+    "typography",
+    "custom-fonts"
+  ],
+  "files": [
+    "src",
+    "ios",
+    "android",
+    "react-native-font-alias.podspec",
+    "react-native.config.js"
+  ],
+  "codegenConfig": {
+    "name": "RNFontAliasSpec",
+    "type": "modules",
+    "jsSrcsDir": "./src"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
