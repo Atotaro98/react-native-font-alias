@@ -1,17 +1,33 @@
 package com.difusionapp.rnfontalias
 
-import com.facebook.react.ReactPackage
+import com.facebook.react.TurboReactPackage
 import com.facebook.react.bridge.NativeModule
 import com.facebook.react.bridge.ReactApplicationContext
-import com.facebook.react.uimanager.ViewManager
+import com.facebook.react.module.model.ReactModuleInfo
+import com.facebook.react.module.model.ReactModuleInfoProvider
 
-class RNFontAliasPackage : ReactPackage {
+class RNFontAliasPackage : TurboReactPackage() {
 
-  override fun createNativeModules(reactContext: ReactApplicationContext): List<NativeModule> {
-    return listOf(RNFontAliasModule(reactContext))
+  override fun getModule(name: String, reactContext: ReactApplicationContext): NativeModule? {
+    return if (name == RNFontAliasModule.NAME) {
+      RNFontAliasModule(reactContext)
+    } else {
+      null
+    }
   }
 
-  override fun createViewManagers(reactContext: ReactApplicationContext): List<ViewManager<*, *>> {
-    return emptyList()
+  override fun getReactModuleInfoProvider(): ReactModuleInfoProvider {
+    return ReactModuleInfoProvider {
+      mapOf(
+        RNFontAliasModule.NAME to ReactModuleInfo(
+          RNFontAliasModule.NAME,
+          RNFontAliasModule.NAME,
+          false, // canOverrideExistingModule
+          false, // needsEagerInit
+          false, // isCxxModule
+          true   // isTurboModule
+        )
+      )
+    }
   }
 }
